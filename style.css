@@ -19,6 +19,11 @@ header {
     padding: 1rem 0;
 }
 
+header .a{
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 1rem;
+}
 header .container {
     display: flex;
     justify-content: space-between;

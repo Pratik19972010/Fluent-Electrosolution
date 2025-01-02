@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>FACILITATE AUTOMATION WEBSITE</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluent Electrosolution</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
-        <div class="container">
+          <div class="container">
+            <img src="https://i.ibb.co/K0jQdqM/Fcopy1.jpg alt="F" border="0"" alt="Fluent Electrosolution Logo" class="logo">
             <h1>Fluent Electrosolution</h1>
             <nav>
                 <ul>
@@ -46,38 +38,38 @@ We are also committed to sustainable practices and offer solar panel installatio
             <ul class="services-list">
                 <li>
                     <img src="https://i.ibb.co/26yfh0K/electrical-for-website.jpg" alt="PLC Control Panel">
-                    <h3>PLC Control Panels</h3>
-                    <p>Design and manufacture of advanced PLC control panels for industrial automation.</p>
+                    <h3>Control Panels</h3>
+                    <p class="service-detail">We specialize in the design, development, and manufacturing of cutting-edge control panels tailored to meet the highest industry standards and the unique requirements of our clients.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/72Jw8SB/homeautomation.jpg" alt="Home Automation">
                     <h3>Home Automation</h3>
-                    <p>Smart home solutions for comfort, convenience, and efficiency.</p>
+                    <p class="service-detail">Transform your living spaces with our innovative smart home solutions, designed to enhance comfort, streamline convenience, and maximize energy efficiency, all while seamlessly integrating with your lifestyle.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/hBnMdVh/microcontrollers.jpg" alt="Microcontroller Project">
                     <h3>Microcontroller Projects</h3>
-                    <p>Customized microcontroller-based solutions for unique applications.</p>
+                    <p class="service-detail">We offer expertly crafted, customized microcontroller-based solutions designed to address unique challenges and applications, ensuring precision, reliability, and performance for every project.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/ctDtRvw/SLD.jpg" alt="SLD Design">
                     <h3>SLD Design</h3>
-                    <p>We create comprehensive single-line diagrams (SLDs) for electrical systems.</p>
+                    <p class="service-detail">We specialize in creating detailed and comprehensive single-line diagrams (SLDs) for electrical systems, providing clear and precise representations to ensure efficient design, analysis, and implementation.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/pRXQPqM/dashboards.png" alt="Dashboards">
                     <h3>Dashboards</h3>
-                    <p>Development of intuitive dashboards for real-time data monitoring and analysis.</p>
+                    <p class="service-detail">We excel in developing user-friendly and intuitive dashboards that enable real-time data monitoring, analysis, and decision-making, empowering businesses with actionable insights and seamless control.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/Z23NWD8/hmi-scada.jpg" alt="HMI and SCADA">
                     <h3>HMI and SCADA</h3>
-                    <p>Design and implementation of HMI and SCADA systems for efficient process control.</p>
+                    <p class="service-detail">We provide end-to-end solutions for the design and implementation of advanced HMI and SCADA systems, enabling efficient process control, enhanced automation, and seamless operational management.</p>
                 </li>
                 <li>
                     <img src="https://i.ibb.co/Wt84whY/solarpanels.jpg" alt="Solar Panel Installation">
                     <h3>Solar Panel Installation</h3>
-                    <p>Expert installation and integration of solar panels for sustainable energy solutions.</p>
+                    <p class="service-detail">We specialize in the expert installation and seamless integration of solar panels, delivering sustainable energy solutions that reduce environmental impact and optimize energy efficiency for homes and businesses.</p>
                 </li>
             </ul>
         </div>
@@ -96,12 +88,43 @@ We are also committed to sustainable practices and offer solar panel installatio
             <p>&copy; 2024 Fluent Electrosolution. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
-</body>
-</html>
+<style>
+/* Updated Styles for Interaction */
+.services-list li {
+    position: relative;
+    cursor: pointer;
+}
+
+.service-detail {
+    display: none;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+</style>
+
+<script>
+// JavaScript for Interactivity
+const serviceItems = document.querySelectorAll('.services-list li');
+const serviceDetails = document.querySelectorAll('.service-detail');
+
+document.addEventListener('click', (event) => {
+    let isServiceItem = false;
+    serviceItems.forEach((item, index) => {
+        if (item.contains(event.target)) {
+            serviceDetails[index].style.display = 
+                serviceDetails[index].style.display === 'block' ? 'none' : 'block';
+            isServiceItem = true;
+        } else {
+            serviceDetails[index].style.display = 'none';
+        }
+    });
+
+    if (!isServiceItem) {
+        serviceDetails.forEach(detail => detail.style.display = 'none');
+    }
+});
+</script>
